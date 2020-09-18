@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
  * Date on 2020/8/24  13:36
  */
 @RestController
-@RequestMapping("/project/atta")
+@RequestMapping("/project")
 public class AttaConsumerController {
 
     @Autowired
