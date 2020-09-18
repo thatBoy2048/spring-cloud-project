@@ -1,6 +1,5 @@
 package com.zjmy.eureka_provider.service;
-
-import com.zjmy.eureka_provider.domain.AttaOrder;
+import com.zjmy.commons.domain.AttaOrder;
 
 /**
  * @author ZhongXiang

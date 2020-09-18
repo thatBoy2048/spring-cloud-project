@@ -24,6 +24,6 @@ spring:
 
 #mybatis全局配置
 mybatis:
-  type-aliases-package: com.zjmy.eureka_provider.domain;
+  type-aliases-package: com.zjmy.commons.domain;
   mapper-locations: classpath:mapper/*/*.xml
   configLocation: classpath:mapper/mybatis-config.xml

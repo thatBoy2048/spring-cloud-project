@@ -1,6 +1,6 @@
 package com.zjmy.eureka_provider.service.impl;
 
-import com.zjmy.eureka_provider.domain.AttaOrder;
+import com.zjmy.commons.domain.AttaOrder;
 import com.zjmy.eureka_provider.mapper.AttaMapper;
 import com.zjmy.eureka_provider.service.AttaService;
 import org.springframework.beans.factory.annotation.Autowired;

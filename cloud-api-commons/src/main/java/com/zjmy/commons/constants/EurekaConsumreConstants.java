@@ -1,4 +1,4 @@
-package com.zjmy.eureka_consumer.constants;
+package com.zjmy.commons.constants;
 
 /**
  * @author ZhongXiang

@@ -1,6 +1,6 @@
 package com.zjmy.eureka_provider.controller;
 
-import com.zjmy.eureka_provider.domain.AttaOrder;
+import com.zjmy.commons.domain.AttaOrder;
 import com.zjmy.eureka_provider.service.AttaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

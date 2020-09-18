@@ -1,4 +1,4 @@
-package com.zjmy.eureka_provider.domain;
+package com.zjmy.commons.domain;
 
 import lombok.Data;
 

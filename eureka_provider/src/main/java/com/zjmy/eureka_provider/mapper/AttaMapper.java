@@ -1,6 +1,6 @@
 package com.zjmy.eureka_provider.mapper;
 
-import com.zjmy.eureka_provider.domain.AttaOrder;
+import com.zjmy.commons.domain.AttaOrder;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
