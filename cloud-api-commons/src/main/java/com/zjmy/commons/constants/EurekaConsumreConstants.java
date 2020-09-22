@@ -8,5 +8,5 @@ public final class EurekaConsumreConstants {
 
     private EurekaConsumreConstants(){}
 
-    public static final String ATTA_URI = "http://eureka-atta/project/atta/";
+    public static final String ATTA_URI = "http://EUREKA-PROVIDER-ATTA/project/atta/";
 }

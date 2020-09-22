@@ -1,6 +1,7 @@
 package com.zjmy.eureka_provider.service.impl;
 
 import com.zjmy.commons.domain.AttaOrder;
+import com.zjmy.commons.utils.StringUtils;
 import com.zjmy.eureka_provider.mapper.AttaMapper;
 import com.zjmy.eureka_provider.service.AttaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class AttaServiceImpl implements AttaService {
     @Override
     public AttaOrder selectAttaOrderById(Integer id) {
         AttaOrder attaOrder = attaMapper.selectAttaOrderById(id);
+        if(StringUtils.isNull(attaOrder)){
+            return null;
+        }
         attaOrder.setPort(this.port);
         return attaOrder;
     }

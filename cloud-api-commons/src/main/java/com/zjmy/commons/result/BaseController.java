@@ -1,4 +1,4 @@
-package com.zjmy.commons.utils;
+package com.zjmy.commons.result;
 
 public class BaseController {
     /**

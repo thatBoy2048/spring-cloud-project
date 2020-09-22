@@ -1,11 +1,12 @@
-eureka:
-  instance:
-    prefer-ip-address: true #注册服务的使用使用服务的ip地址
-  client:
-    serviceUrl: #注册中心的注册地址
-      defaultZone: http://eureka7001.com:8761/eureka/,http://eureka7001.com:8761/eureka/
 server:
   port: 8002  #服务端口号
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
 spring:
   application:
     name: eureka-provider-atta #服务名称--调用的时候根据名称来调用该服务的方法
@@ -13,7 +14,7 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/dubbo_db
+      url: jdbc:mysql://localhost:3306/cloud
       username: root
       password: 123456
       initial-size: 5

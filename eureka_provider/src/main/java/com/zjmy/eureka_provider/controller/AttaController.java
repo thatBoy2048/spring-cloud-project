@@ -21,7 +21,8 @@ public class AttaController {
 
     @GetMapping("/{id}")
     public AttaOrder selectAttaOrderById(@PathVariable Integer id){
-        return attaService.selectAttaOrderById(id);
+        AttaOrder attaOrder = attaService.selectAttaOrderById(id);
+        return attaOrder;
     }
 
 
