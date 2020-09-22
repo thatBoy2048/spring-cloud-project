@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjmy.eureka_provider.mapper.AttaMapper">
+
+    <resultMap id="attaOrderResult" type="AttaOrder" autoMapping="true">
+        <id property="id" column="id"/>
+    </resultMap>
+
+    <select id="selectAttaOrderById" resultMap="attaOrderResult">
+        select * from t_order where id = #{id}
+    </select>
+
+</mapper>
