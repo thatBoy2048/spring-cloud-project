@@ -22,8 +22,17 @@ public class AttaConsumerController extends BaseController {
 
     @GetMapping("project/eureka/{id}")
     public AjaxResult selectAttaById(@PathVariable Integer id){
-        AttaOrder order = restTemplate.getForObject(EurekaConsumreConstants.ATTA_URI + id, AttaOrder.class);
+        AttaOrder order = restTemplate.
+                getForObject(EurekaConsumreConstants.ATTA_URI +"/project/atta/"+ id, AttaOrder.class);
         return toAjaxSuccess(order);
 
     }
+    @GetMapping("project/eureka/create")
+    public AjaxResult createAttaOrder(AttaOrder attaOrder){
+        AttaOrder order = restTemplate.
+                postForObject(EurekaConsumreConstants.ATTA_URI + "/project/atta/create",attaOrder, AttaOrder.class);
+        return toAjaxSuccess(order);
+
+    }
+
 }

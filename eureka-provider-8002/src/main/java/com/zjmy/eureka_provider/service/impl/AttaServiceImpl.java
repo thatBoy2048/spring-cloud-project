@@ -29,4 +29,11 @@ public class AttaServiceImpl implements AttaService {
         attaOrder.setPort(this.port);
         return attaOrder;
     }
+
+    @Override
+    public AttaOrder createAttaOrder(AttaOrder attaOrder) {
+        attaMapper.createAttaOrder(attaOrder);
+        attaOrder.setPort(this.port);
+        return attaOrder;
+    }
 }

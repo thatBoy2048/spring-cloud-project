@@ -13,4 +13,11 @@ public interface AttaService {
      * @return
      */
     AttaOrder selectAttaOrderById(Integer id);
+
+    /**
+     *
+     * @param attaOrder
+     * @return
+     */
+    AttaOrder createAttaOrder(AttaOrder attaOrder);
 }

@@ -10,4 +10,9 @@
         select * from t_order where id = #{id}
     </select>
 
+    <insert id="createAttaOrder" parameterType="AttaOrder"
+            keyProperty="id" useGeneratedKeys="true">
+        insert into t_order (name,order_code) values (#{name},#{orderCode})
+    </insert>
+
 </mapper>

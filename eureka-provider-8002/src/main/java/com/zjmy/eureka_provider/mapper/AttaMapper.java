@@ -17,4 +17,10 @@ public interface AttaMapper {
      * @return
      */
     AttaOrder selectAttaOrderById(@Param("id") Integer id);
+    /**
+     * 创建
+     * @param attaOrder
+     * @return
+     */
+    int createAttaOrder(AttaOrder attaOrder);
 }
