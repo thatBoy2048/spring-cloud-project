@@ -17,6 +17,7 @@
         <lombok.version>1.16.18</lombok.version>
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.13</druid.version>
+        <consul.version>1.6.6</consul.version>
         <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
     </properties>
@@ -29,6 +30,8 @@
         <module>cloud-api-commons</module>
         <module>erreka-servicer-7002</module>
         <module>eureka-provider-8002</module>
+        <module>consul-provider8006</module>
+        <module>consul-consumer8007</module>
     </modules>
 
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->

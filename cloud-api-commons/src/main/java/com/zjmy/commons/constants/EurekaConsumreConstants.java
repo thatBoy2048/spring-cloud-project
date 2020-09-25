@@ -6,7 +6,10 @@ package com.zjmy.commons.constants;
  */
 public final class EurekaConsumreConstants {
 
+
     private EurekaConsumreConstants(){}
 
     public static final String ATTA_URI = "http://EUREKA-PROVIDER-ATTA";
+
+    public static final String CONSUL_URI = "http://consul-provider-payment";
 }
