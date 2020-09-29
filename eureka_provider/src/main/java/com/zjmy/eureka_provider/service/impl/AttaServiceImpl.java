@@ -4,10 +4,13 @@ import com.zjmy.commons.domain.AttaOrder;
 import com.zjmy.commons.utils.StringUtils;
 import com.zjmy.eureka_provider.mapper.AttaMapper;
 import com.zjmy.eureka_provider.service.AttaService;
+import org.apache.tomcat.jni.Thread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author ZhongXiang
@@ -31,6 +34,13 @@ public class AttaServiceImpl implements AttaService {
             return null;
         }
         attaOrder.setPort(this.port);
+
+        //openFeign默认调用提供者时间1秒，超过1秒会报超时异常
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
         return attaOrder;
     }
 

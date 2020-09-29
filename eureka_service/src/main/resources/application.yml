@@ -11,8 +11,8 @@ eureka:
       #集群版相互注册，相互守望
       defaultZone: http://eureka7002.com:7002/eureka/    #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
       #defaultZone: http://eureka7001.com:7001/eureka/ #单机
-  server:
+  #server:
     #出厂默认，自我保护机制是开启的
-    enable-self-preservation: false
+    #enable-self-preservation: false
     # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
-    eviction-interval-timer-in-ms: 2000
+    #eviction-interval-timer-in-ms: 2000

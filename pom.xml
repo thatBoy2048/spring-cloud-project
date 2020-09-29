@@ -26,12 +26,12 @@
         <module>eureka_service</module>
         <module>eureka_consumer</module>
         <module>eureka_provider</module>
-        <module>eureka_feign</module>
         <module>cloud-api-commons</module>
         <module>erreka-servicer-7002</module>
         <module>eureka-provider-8002</module>
         <module>consul-provider8006</module>
         <module>consul-consumer8007</module>
+        <module>openFeign-consumer</module>
     </modules>
 
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
