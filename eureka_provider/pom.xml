@@ -9,6 +9,12 @@
     </parent>
     <artifactId>eureka_provider</artifactId>
     <dependencies>
+        <!--新增hystrix-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
         <!--全局工具类-->
         <dependency>
             <groupId>com.zjmy.spring_cloud_project</groupId>
