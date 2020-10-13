@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Date on 2020/9/30  15:06
  */
 @Component
-@FeignClient(value = "EUREKA-PROVIDER-ATTA")
+@FeignClient(value = "EUREKA-PROVIDER-ATTA",fallback = PaymentFallbackService.class)
 public interface HystrixOrderService {
     /**
      *

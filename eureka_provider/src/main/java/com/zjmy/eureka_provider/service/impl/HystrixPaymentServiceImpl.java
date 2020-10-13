@@ -37,12 +37,12 @@ public class HystrixPaymentServiceImpl implements HystrixPaymentService {
      */
     @Override
     @HystrixCommand(fallbackMethod = "paymentTimeoutInfo_handler",commandProperties = {
-            @HystrixProperty(name ="execution.isolation.thread.timeoutInMilliseconds",value = "5000")
+            @HystrixProperty(name ="execution.isolation.thread.timeoutInMilliseconds",value = "3000")
     }) //3秒钟以内就是正常的业务逻辑
     public String hystrixPaymentTimeout(Integer id) {
-        int timeNumber = 3;
-        try { TimeUnit.SECONDS.sleep(timeNumber); }catch (Exception e) {e.printStackTrace();}
-        String rest ="线程池："+Thread.currentThread().getName()+" hystrixPaymentTimeout,id："+id+"  "+"哈哈哈哈哈哈"+" 耗时(秒)"+timeNumber + "端口："+ serverPort;
+        int timeNumber = 999;
+        try { TimeUnit.MILLISECONDS.sleep(timeNumber); }catch (Exception e) {e.printStackTrace();}
+        String rest ="线程池："+Thread.currentThread().getName()+" hystrixPaymentTimeout,id："+id+"  "+"哈哈哈哈哈哈"+" 耗时:"+timeNumber+"(秒)" + "端口："+ serverPort;
         log.info(rest);
         return rest;
     }
