@@ -26,23 +26,34 @@ public class HystrixOredeController {
         return paymentOk;
     }
 
-    @GetMapping("/consumer/payment/hystrix/timeout/{id}")
+//    精确配置方法
 //    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod",commandProperties = {
 //            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "1500")  //3秒钟以内就是正常的业务逻辑
 //    })
+    @GetMapping("/consumer/payment/hystrix/timeout/{id}")
+    //@HystrixCommand
     public String hystrixTimeout(@PathVariable("id") Integer id) {
         String paymentTimeout = hystrixOrderService.hystrixTimeout(id);
         return paymentTimeout;
     }
 
-    //兜底方法
+
+    /**
+     * 兜底方法1
+     * @param id
+     * @return
+     */
     public String paymentTimeOutFallbackMethod(@PathVariable("id") Integer id) {
+
         return "我是消费者80，对付支付系统繁忙请10秒钟后再试或者自己运行出错请检查自己,(┬＿┬)";
     }
 
 
-    //下面是全局fallback方法
+    /**
+     * 下面是全局fallback方法2
+     */
     public String payment_Global_FallbackMethod(){
+
         return "Global异常处理信息，请稍后再试,(┬＿┬)";
     }
 

@@ -1,6 +1,7 @@
 package com.zjmy.eureka_provider.controller;
 
 import com.zjmy.eureka_provider.service.HystrixPaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Date on 2020/9/30  13:58
  */
 @RestController
+@Slf4j
 public class HystrixController {
 
     @Autowired
@@ -26,6 +28,17 @@ public class HystrixController {
         String paymentTimeout= hystrixPaymentService.hystrixPaymentTimeout(id);
         return paymentTimeout;
     }
+
+    //===服务熔断
+    @GetMapping("/payment/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id){
+        String result = hystrixPaymentService.paymentCircuitBreaker(id);
+        log.info("*******result:"+result);
+        return result;
+    }
+
+
+
 
 
 
