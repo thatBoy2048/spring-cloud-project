@@ -15,7 +15,6 @@ import java.util.List;
  * Date on 2020/8/24  10:10
  */
 @RestController
-@RequestMapping("/project/atta")
 @Slf4j
 public class AttaController {
 
@@ -25,13 +24,13 @@ public class AttaController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @GetMapping("/{id}")
+    @GetMapping("/project/atta/{id}")
     public AttaOrder selectAttaOrderById(@PathVariable Integer id){
         AttaOrder attaOrder = attaService.selectAttaOrderById(id);
         return attaOrder;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/project/atta/create")
     public AttaOrder createAttaOrder(@RequestBody AttaOrder attaOrder){
         return attaService.createAttaOrder(attaOrder);
     }
@@ -40,7 +39,7 @@ public class AttaController {
      * 服务发现
      * @return
      */
-    @GetMapping(value = "/discovery")
+    @GetMapping(value = "/project/atta/discovery")
     public Object discovery(){
         List<String> services = discoveryClient.getServices();
         for (String element : services) {
