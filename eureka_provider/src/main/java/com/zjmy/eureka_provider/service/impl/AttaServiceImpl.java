@@ -36,11 +36,11 @@ public class AttaServiceImpl implements AttaService {
         attaOrder.setPort(this.port);
 
         //openFeign默认调用提供者时间1秒，超过1秒会报超时异常
-        try {
-            TimeUnit.SECONDS.sleep(3);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeUnit.SECONDS.sleep(3);
+//        }catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return attaOrder;
     }
 
