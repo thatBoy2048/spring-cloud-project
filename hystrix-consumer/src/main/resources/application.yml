@@ -6,7 +6,8 @@ eureka:
     register-with-eureka: false
     fetchRegistry: true
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+      defaultZone: http://eureka7001.com:7001/eureka
 #开启OpenFeign客户端超时控制 (OpenFeign 默认1秒)
 ribbon:
   ReadTimeout: 5000
