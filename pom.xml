@@ -35,6 +35,7 @@
         <module>hystrix-consumer</module>
         <module>hystrix-dashboard9001</module>
         <module>geteway9527</module>
+        <module>cloud-config-center-3344</module>
     </modules>
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
     <dependencyManagement>
