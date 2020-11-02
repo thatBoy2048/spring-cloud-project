@@ -27,7 +27,7 @@
         <module>eureka_consumer</module>
         <module>eureka_provider</module>
         <module>cloud-api-commons</module>
-        <module>erreka-servicer-7002</module>
+        <module>eureka-servicer-7002</module>
         <module>eureka-provider-8002</module>
         <module>consul-provider8006</module>
         <module>consul-consumer8007</module>
