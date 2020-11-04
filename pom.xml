@@ -39,7 +39,11 @@
         <module>cloud-config-client-3355</module>
         <module>cloud-config-client-3366</module>
         <module>cloud-stream-rabbitmq-provider-8801</module>
-        <module>cloud-stream-rabbitmq-comsumer-8802</module>
+        <module>cloud-stream-rabbitmq-consumer-8802</module>
+        <module>cloud-stream-rabbitmq-consumer-8803</module>
+        <module>alibaba-provider-payment-9001</module>
+        <module>alibaba-provider-payment-9002</module>
+        <module>alibaba-consumer-order-83</module>
     </modules>
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
     <dependencyManagement>
@@ -69,7 +73,7 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <version>2.2.1.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
