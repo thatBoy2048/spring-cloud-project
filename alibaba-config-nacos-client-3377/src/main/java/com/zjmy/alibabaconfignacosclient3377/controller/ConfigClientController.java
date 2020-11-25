@@ -16,10 +16,13 @@ public class ConfigClientController
     @Value("${config.info}")
     private String configInfo;
 
+    @Value("${config.log}")
+    private String configlog;
+
     @GetMapping("/config/info")
     public String getConfigInfo()
     {
-        return configInfo;
+        return configInfo +"##################"+configlog;
 
     }
 

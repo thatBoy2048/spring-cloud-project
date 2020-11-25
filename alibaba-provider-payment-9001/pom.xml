@@ -9,6 +9,21 @@
     </parent>
     <artifactId>alibaba-provider-payment-9001</artifactId>
     <dependencies>
+        <!-- nacos config-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zjmy.spring_cloud_project</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+        </dependency>
+
         <!-- SpringCloud ailibaba nacos-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

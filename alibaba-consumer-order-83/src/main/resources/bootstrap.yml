@@ -1,9 +1,9 @@
 server:
-  port: 3377
+  port: 83
 
 spring:
   application:
-    name: nacos-config-client
+    name: nacos-order-consumer
   cloud:
     nacos:
       discovery:
@@ -14,5 +14,10 @@ spring:
         file-extension: yaml #指定yaml格式配置
         group: DEFAULT_GROUP
         namespace: a0845503-589d-41bb-a1da-88c5b840c839
+
+  #消费者将去访问的微服务名称（注册成功进nacos的微服务提供者）
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+
 
 

@@ -1,17 +1,11 @@
-server:
-  port: 83
-
 spring:
-  application:
-    name: nacos-order-consumer
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848 #配置Nacos地址
+  profiles:
+    active: dev #表示开发环境
+    #active: test #表示开发环境
+    #active: info #表示开发环境
+    #active: namespace #表示开发环境
+  config: consumer ---------------表示开发环境！！！！！！！！！！！！！！！！！！！！
 
-#消费者将去访问的微服务名称（注册成功进nacos的微服务提供者）
-service-url:
-  nacos-user-service: http://nacos-payment-provider
 
 
 

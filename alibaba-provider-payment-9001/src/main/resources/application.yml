@@ -1,16 +1,10 @@
-server:
-  port: 9011
-
 spring:
-  application:
-    name: nacos-payment-provider
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848 #配置Nacos地址
+  profiles:
+    active: test
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/xmtp # 配置 mongo 地址 服务器IP:端口/数据库名
+  config: 配置 mongo 地址 服务器IP:端口/数据库名
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+
+

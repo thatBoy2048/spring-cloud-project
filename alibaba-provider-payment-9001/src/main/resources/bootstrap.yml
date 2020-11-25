@@ -1,9 +1,8 @@
 server:
-  port: 3377
-
+  port: 9011
 spring:
   application:
-    name: nacos-config-client
+    name: nacos-payment-provider
   cloud:
     nacos:
       discovery:
@@ -14,5 +13,10 @@ spring:
         file-extension: yaml #指定yaml格式配置
         group: DEFAULT_GROUP
         namespace: a0845503-589d-41bb-a1da-88c5b840c839
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 
