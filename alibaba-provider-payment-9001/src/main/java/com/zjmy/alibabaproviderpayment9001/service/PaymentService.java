@@ -28,4 +28,11 @@ public interface PaymentService {
      * @return
      */
     String deletePaymentMongo(Integer id);
+
+    /**
+     *  模糊查询
+     * @param order
+     * @return
+     */
+    List<AttaOrder> selectPaymentMongo(AttaOrder order);
 }

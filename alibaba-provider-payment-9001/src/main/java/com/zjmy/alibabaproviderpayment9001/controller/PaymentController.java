@@ -72,4 +72,11 @@ public class PaymentController {
         log.info("#################################"+ config);
         return paymentService.deletePaymentMongo(id);
     }
+
+    @GetMapping("/get/payment/nacos/mongo")
+    public List<AttaOrder> selectPaymentMongo(){
+        AttaOrder order = new AttaOrder();
+        order.setName("A5");
+        return paymentService.selectPaymentMongo(order);
+    }
 }

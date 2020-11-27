@@ -1,18 +1,22 @@
 package com.zjmy.alibabaproviderpayment9001.service.impl;
 
+import cn.hutool.db.sql.Direction;
 import com.mongodb.client.result.DeleteResult;
 import com.zjmy.alibabaproviderpayment9001.service.PaymentService;
 import com.zjmy.commons.domain.AttaOrder;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import javax.management.Descriptor;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * @author ZhongXiang
@@ -54,6 +58,12 @@ public class PaymentServiceImpl implements PaymentService {
         DeleteResult id1 = mongoTemplate.remove(new Query(Criteria.where("_id").is(id)), AttaOrder.class);
         log.info("##############################"+id1.toString());
         return id1.toString();
+    }
+
+    @Override
+    public List<AttaOrder> selectPaymentMongo(AttaOrder order) {
+        Pattern compile = Pattern.compile("^.*" + order.getName().trim() + ".*$", Pattern.CASE_INSENSITIVE);
+        return mongoTemplate.find(new Query(Criteria.where("name").regex(compile)),AttaOrder.class);
     }
 
 
