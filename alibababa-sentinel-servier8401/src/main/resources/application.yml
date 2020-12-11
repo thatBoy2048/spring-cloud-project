@@ -21,3 +21,5 @@ management:
     web:
       exposure:
         include: '*'
+file:
+  path: D:\img\测试文件任何时候均可使用.docx
