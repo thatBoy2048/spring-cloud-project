@@ -1,9 +1,12 @@
 package com.zjmy.alibabaproviderpayment9001.controller;
 
+import com.zjmy.alibabaproviderpayment9001.domain.Order;
+import com.zjmy.alibabaproviderpayment9001.service.OrderService;
 import com.zjmy.alibabaproviderpayment9001.service.PaymentService;
 import com.zjmy.commons.domain.AttaOrder;
 import com.zjmy.commons.domain.Payment;
 import com.zjmy.commons.result.AjaxResult;
+import com.zjmy.commons.result.BaseController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,7 +22,7 @@ import java.util.*;
 @RestController
 @Slf4j
 @RefreshScope
-public class PaymentController {
+public class PaymentController extends BaseController {
 
     @Value("${server.port}")
     private String serverPort;
@@ -29,6 +32,9 @@ public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    private OrderService orderService;
 
     @GetMapping("/payment/nacos/{id}")
     public String getPayment(@PathVariable("id") Integer id){
@@ -96,4 +102,13 @@ public class PaymentController {
         order.setName("A5");
         return paymentService.selectPaymentMongo(order);
     }
+
+    @GetMapping("/order/create")
+    public AjaxResult create(Order order)
+    {
+        orderService.create(order);
+        return success("200,订单创建成功");
+    }
+
+
 }

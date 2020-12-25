@@ -2,17 +2,41 @@ server:
   port: 9011
 spring:
   application:
-    name: nacos-payment-provider
+    name: seata-order-service
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848 #Nacos服务注册中心地址
-        #namespace: a0845503-589d-41bb-a1da-88c5b840c839 #指定命名空间
+        namespace: 582d8be2-e801-4a11-9c93-92fc109b610f #指定命名空间
       config:
         server-addr: localhost:8848 #Nacos作为配置中心地址
         file-extension: yaml #指定yaml格式配置
         group: DEFAULT_GROUP
-        #namespace: a0845503-589d-41bb-a1da-88c5b840c839 #指定命名空间
+        namespace: a0845503-589d-41bb-a1da-88c5b840c839 #指定命名空间
+# seata 分布式事务
+seata:
+  enabled: true
+  application-id: applicationName
+  tx-service-group: my_test_tx_group
+  enable-auto-data-source-proxy: true
+
+config:
+  type: nacos
+  nacos:
+    namespace: 582d8be2-e801-4a11-9c93-92fc109b610f
+    serverAddr: 127.0.0.1:8848
+    group: SEATA_CONFIG_GROUP
+    userName: "nacos"
+    password: "nacos"
+
+registry:
+  type: nacos
+  nacos:
+    application: seata-server
+    server-addr: 127.0.0.1:8848
+    namespace: 582d8be2-e801-4a11-9c93-92fc109b610f
+    userName: "nacos"
+    password: "nacos"
 
 management:
   endpoints:

@@ -5,6 +5,24 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/xmtp # 配置 mongo 地址 服务器IP:端口/数据库名
   config: 配置 mongo 地址 服务器IP:端口/数据库名
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_order
+    username: root
+    password: 123456
+
+feign:
+  hystrix:
+    enabled: false
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis:
+  typeAliasesPackage: com.zjmy.alibabaproviderpayment9001.domain;
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
 
 
 

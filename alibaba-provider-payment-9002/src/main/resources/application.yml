@@ -3,11 +3,54 @@ server:
 
 spring:
   application:
-    name: nacos-payment-provider
+    name: seata-storage-service
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848  #配置Nacos地址
+        namespace: 582d8be2-e801-4a11-9c93-92fc109b610f #指定命名空间
+    alibaba:
+      seata:
+        tx-service-group: tx_tison_group
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_storage
+    username: root
+    password: 123456
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis:
+  typeAliasesPackage: com.zjmy.alibabaproviderpayment9002.domain;
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+
+# seata 分布式事务
+seata:
+ enabled: true
+ application-id: applicationName
+ tx-service-group: my_test_tx_group
+ enable-auto-data-source-proxy: true
+config:
+  type: nacos
+  nacos:
+    namespace: 582d8be2-e801-4a11-9c93-92fc109b610f
+    serverAddr: 127.0.0.1:8848
+    group: SEATA_CONFIG_GROUP
+    userName: "nacos"
+    password: "nacos"
+registry:
+  type: nacos
+  nacos:
+    application: seata-server
+    server-addr: 127.0.0.1:8848
+    namespace: 582d8be2-e801-4a11-9c93-92fc109b610f
+    userName: "nacos"
+    password: "nacos"
+
+
 management:
   endpoints:
     web:

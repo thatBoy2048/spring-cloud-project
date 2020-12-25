@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
-/**
+/** 1054 - Unknown column 'total' in 'field list'
  * @author ZhongXiang
  * Date on 2020/12/9  11:35
  */
