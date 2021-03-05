@@ -3,17 +3,14 @@ package com.zjmy.eureka_provider.service.impl;
 import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import com.zjmy.eureka_provider.service.HystrixPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.bouncycastle.asn1.x500.style.RFC4519Style.serialNumber;
 
 /**
  * @author ZhongXiang
