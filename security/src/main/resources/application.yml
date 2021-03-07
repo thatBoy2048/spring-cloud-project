@@ -2,6 +2,8 @@ server:
   port: 8099
 
 spring:
+  application:
+    name: security-springboot
   mvc:
     view:
       prefix: /WEB-INF/view/

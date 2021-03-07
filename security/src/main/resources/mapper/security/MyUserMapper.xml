@@ -3,7 +3,7 @@
 <mapper namespace="com.zjmy.security.mapper.MyUserMapper">
 
     <select id="selectUserByUserName" parameterType="string" resultType="AothUser">
-        select id,username,password from t_user where username = #{username}
+        select id,username,password from t_user where username = #{userName}
     </select>
 
 </mapper>

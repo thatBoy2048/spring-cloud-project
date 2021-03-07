@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
@@ -25,6 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+        //使用明文的方式，被废弃,过度
+        //return NoOpPasswordEncoder.getInstance();
     }
 
     //安全拦截机制（最重要）
@@ -39,16 +42,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()//除了/r/**，其它的请求可以访问
                 .and()
                 .formLogin()//自定义 允许表单登录
-                .loginPage("/login")//登录页面地址
-                .loginProcessingUrl("/user/login")//登录访问路径
-                .successForwardUrl("/index/success");//自定义登录成功的页面地址
-//        .and()
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-//                .and()
-//                .logout()
-//                .logoutUrl("/logout")
-//                .logoutSuccessUrl("/login-view?logout");
+                .loginPage("/login-view")//跳转登录页面
+                .loginProcessingUrl("/login")
+                .successForwardUrl("/r/index/success")//自定义登录成功的页面地址
+        .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                .and()
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/login-view?logout");
 
 
     }

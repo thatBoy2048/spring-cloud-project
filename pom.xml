@@ -46,6 +46,7 @@
         <module>alibaba-consumer-order-83</module>
         <module>alibaba-config-nacos-client-3377</module>
         <module>alibababa-sentinel-servier8401</module>
+        <module>security</module>
     </modules>
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
     <dependencyManagement>

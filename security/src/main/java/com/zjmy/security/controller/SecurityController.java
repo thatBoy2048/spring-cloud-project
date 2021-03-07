@@ -1,6 +1,7 @@
 package com.zjmy.security.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,16 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
  * Date on 2021/2/26  11:25
  */
 @RestController
-@RequestMapping("/r")
 public class SecurityController {
 
-    @GetMapping("/index/success")
+    @PostMapping("/r/index/success")
     public String indexSuccess(){
         return "登陆成功！！！！！！！！！";
     }
 
-    @GetMapping("/test")
+    @GetMapping("/r/test1")
     public String test(){
-        return "访问资源成功！！！！！！！！！";
+        return "访问资源成功 1 ！！！！！！！！！";
+    }
+
+    @GetMapping("/r/test2")
+    public String test2(){
+        return "访问资源成功 2 ！！！！！！！！！";
     }
 }
