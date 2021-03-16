@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
-    @Autowired
+    @Autowired(required = false)
     private MyUserMapper myUserMapper;
 
     @Override
